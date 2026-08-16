@@ -1,0 +1,12 @@
+2026-08-16 04:44:43,836 - INFO - Batch scoring started.
+2026-08-16 04:44:43,836 - INFO - Total customers to score: 100
+2026-08-16 04:44:45,805 - INFO - Total requests: 100
+2026-08-16 04:44:45,806 - INFO - Failed predictions: 0
+2026-08-16 04:44:45,806 - INFO - Average churn probability: 0.2704
+2026-08-16 04:44:45,806 - INFO - Batch scoring completed.
+2026-08-16 04:47:33,411 - INFO - Batch scoring started.
+2026-08-16 04:47:33,411 - INFO - Total customers to score: 100
+2026-08-16 04:47:35,330 - INFO - Total requests: 100
+2026-08-16 04:47:35,330 - INFO - Failed predictions: 0
+2026-08-16 04:47:35,330 - INFO - Average churn probability: 0.2704
+2026-08-16 04:47:35,330 - INFO - Batch scoring completed.
