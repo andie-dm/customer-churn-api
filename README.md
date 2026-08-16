@@ -82,3 +82,23 @@ Example response:
     "churn_probability": 0.6410,
     "churn_prediction": "Yes"
 }
+
+---
+
+## Model Maintenance Plan
+
+To keep the customer churn model reliable over time, I would regularly monitor both the model predictions and the performance of the deployment pipeline.
+
+### Retraining Strategy
+
+I would review the model periodically using newly collected customer data and actual churn outcomes. I would consider retraining the model every 3–6 months, or sooner if there is evidence that its prediction performance has declined. Retraining may also be necessary when the company introduces major changes such as new services, pricing plans, contracts, or customer policies because these changes could affect customer behavior. Before replacing the existing model, I would evaluate the new version and confirm that it performs appropriately on recent data.
+
+### Drift and Failure Monitoring
+
+I would monitor the batch scoring logs for changes in prediction patterns and technical failures. Important metrics include the number of prediction requests, failed requests, and average churn probability. A significant change in the average churn probability over time could indicate data drift, meaning that current customer behavior is becoming different from the data used to train the model. I would also investigate increases in API errors, missing values, unexpected categories, or failed predictions because these could indicate problems with incoming data or the deployment pipeline.
+
+### Versioning and Documentation
+
+Future versions of the model, preprocessing transformer, and application code should be versioned and documented in GitHub. Each update should use a clear commit message explaining what changed, such as changes to the training data, preprocessing steps, model configuration, or API. When a new model is deployed, I would document the date, model version, training data used, and evaluation results. Previous working versions should be retained when possible so the system can be rolled back if a newer deployment causes unexpected problems.
+
+---
