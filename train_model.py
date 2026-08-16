@@ -112,7 +112,7 @@ X_cleaned = preprocessor.fit_transform(X)
 # -----------------------------------
 
 model = LogisticRegression(
-    max_iter=1000
+    max_iter=5000
 )
 
 model.fit(X_cleaned, y)
