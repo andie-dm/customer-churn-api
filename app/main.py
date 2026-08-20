@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+
 import joblib
 from pathlib import Path
 
@@ -16,7 +17,15 @@ APP_DIR = Path(__file__).resolve().parent
 transformer = joblib.load(APP_DIR / "transformer.pkl")
 model = joblib.load(APP_DIR / "model.pkl")
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({
+        "message": "Welcome to the Customer Churn Prediction API",
+        "status": "API is running"
+    })
 
+
+#Creat the /predict endpoint - this creates an API address named /predict that accepts POST requests.
 @app.route("/predict", methods=["POST"])
 def predict():
 
