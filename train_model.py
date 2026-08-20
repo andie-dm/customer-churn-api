@@ -5,6 +5,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
 
 
 # -----------------------------------
@@ -107,8 +108,14 @@ preprocessor = ColumnTransformer(
 X_cleaned = preprocessor.fit_transform(X)
 
 
+#10. TRAIN TEST SPLIT
+#X_train, X_test, y_train, y_test = train_test_split(
+ #   X_cleaned, 
+ #   y, test_size=0.2, random_state=42)
+
+
 # -----------------------------------
-# 10. TRAIN LOGISTIC REGRESSION
+# 10. TRAIN MODEL - LOGISTIC REGRESSION
 # -----------------------------------
 
 model = LogisticRegression(
@@ -117,9 +124,17 @@ model = LogisticRegression(
 
 model.fit(X_cleaned, y)
 
+# 11. ACCURACY
+
+y_pred = model.predict(X_cleaned)
+
+print("Accuracy:",accuracy_score(y, y_pred)) 
+
+
+
 
 # -----------------------------------
-# 11. SAVE TRANSFORMER AND MODEL
+# 12. SAVE TRANSFORMER AND MODEL
 # -----------------------------------
 
 joblib.dump(
